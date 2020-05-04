@@ -29,4 +29,4 @@ mkdir -p /mnt/home/faebl/.config
 cp /nixconfig/nixpkgs/* /mnt/home/faebl/.config
 
 nixos-install
-reboot
+#reboot
