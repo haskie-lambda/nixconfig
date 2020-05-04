@@ -11,7 +11,7 @@
       }
     ];
     enable = true;
-    layout = "en";
+    layout = "de";
 
     desktopManager = {
       default = "none";
