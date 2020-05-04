@@ -18,15 +18,11 @@ mount /dev/mapper/crypted /mnt
 mkdir -p /mnt/boot                      # (for UEFI systems only)
 mount /dev/disk/by-label/boot /mnt/boot # (for UEFI systems only)
 
-nix-env -iA nixos.git
-git config --global core.autocrlf input
-git clone https://github.com/faeblDevelopment/nixconfig.git
-
 nixos-generate-config --root /mnt
 
-cp /nixconfig/nixos/* /mnt/etc/nixos/
+cp ./nixos/* /mnt/etc/nixos/
 mkdir -p /mnt/home/faebl/.config
-cp /nixconfig/nixpkgs/* /mnt/home/faebl/.config
+cp ./nixpkgs/* /mnt/home/faebl/.config
 
 nixos-install
 #reboot
