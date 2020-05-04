@@ -70,10 +70,10 @@
     defaultLocale = "de_AT.UTF-8";
   };
 
-  console = {
-    font = "Lat2-Terminus16";
-    #keyMap = "en-latin1";
-  };
+  # console = {
+  #   font = "Lat2-Terminus16";
+  #   #keyMap = "en-latin1";
+  # };
 
   # Set your time zone.
   time.timeZone = "Europe/Vienna";
