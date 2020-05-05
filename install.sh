@@ -20,9 +20,12 @@ mount /dev/disk/by-label/boot /mnt/boot # (for UEFI systems only)
 
 nixos-generate-config --root /mnt
 
+rm /mnt/etc/nixos/configuration.nix
 cp -r ./nixos/* /mnt/etc/nixos/
 mkdir -p /mnt/home/faebl/.config
 cp -r ./nixpkgs/* /mnt/home/faebl/.config
 
 nixos-install
+
+passwd faebl 
 #reboot
