@@ -11,7 +11,12 @@ swapon /dev/sda2
 mkfs.fat -F 32 -n boot /dev/sda3        # (for UEFI systems only)
 
 # CREATION OF ENCRYPTED HOME
-cryptsetup luksFormat /dev/sda1
+until (YES | cryptsetup luksFormat /dev/sda1)
+do
+  echo "Try again"
+done
+
+
 cryptsetup luksOpen /dev/sda1 crypted
 mkfs.ext4 /dev/mapper/crypted
 mount /dev/mapper/crypted /mnt

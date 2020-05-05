@@ -13,7 +13,7 @@
     
     #for virtualbox
     loader.grub.device = "/dev/sda";
-    loader.grub.devices = "/dev/sda";
+    # loader.grub.devices = "/dev/sda";
     initrd.checkJournalingFS = false;
     # ensd virutualbox
   };
