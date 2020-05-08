@@ -31,6 +31,4 @@ mkdir -p /mnt/home/faebl/.config
 cp -r ./nixpkgs/* /mnt/home/faebl/.config
 
 nixos-install
-
-passwd faebl 
 #reboot
