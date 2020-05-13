@@ -115,6 +115,6 @@ in {
 
   services.random-background = {
     enable = true;
-    imageDirectory = "%h/Documents/Wallpapers";
+    imageDirectory = "%h/wallpapers";
   };
 }

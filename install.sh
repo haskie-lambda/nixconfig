@@ -27,8 +27,8 @@ nixos-generate-config --root /mnt
 
 rm /mnt/etc/nixos/configuration.nix
 cp -r ./nixos/* /mnt/etc/nixos/
-mkdir -p /mnt/home/faebl/.config
-cp -r ./nixpkgs/* /mnt/home/faebl/.config
+mkdir -p /mnt/home/faebl/.config/nixpkgs
+cp -r ./nixpkgs/* /mnt/home/faebl/.config/nixpkgs
 
 nixos-install
 #reboot

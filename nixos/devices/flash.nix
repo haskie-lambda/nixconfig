@@ -68,7 +68,7 @@
 
   # Select internationalisation properties.
   i18n = {
-    defaultLocale = "de_AT.UTF-8";
+    defaultLocale = "en_US.UTF-8";
   };
 
   # console = {
@@ -169,7 +169,7 @@
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
   services.xserver = {
     enable = true;
-    layout = "de";
+    layout = "en";
     #xkbOptions = "eurosign:e";
 
   # Enable proprietary NVIDIA drivers

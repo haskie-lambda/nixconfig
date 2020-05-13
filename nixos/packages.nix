@@ -6,6 +6,7 @@ pkgs: with pkgs; [
   git
   home-manager
   ghostscript
+  wcid
 
   stack
   firefox
@@ -15,4 +16,9 @@ pkgs: with pkgs; [
   elvish
   rofi
   polybar
+  picom
+  alacritty
+  dunst
+  kitty
+  zathura
 ] 
