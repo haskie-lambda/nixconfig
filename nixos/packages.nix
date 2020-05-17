@@ -16,7 +16,7 @@ pkgs: with pkgs; [
   elvish
   rofi
   polybar
-  picom
+  #picom
   alacritty
   dunst
   kitty
