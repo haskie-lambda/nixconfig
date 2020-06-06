@@ -30,7 +30,6 @@ if [ "$1" != "--rebuild" ]; then
 else
   cd nixconfig
   git pull
-  cd ..
 fi
 
 
