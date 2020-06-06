@@ -28,6 +28,7 @@ if [ "$1" != "--rebuild" ]; then
   nixos-generate-config --root /mnt
 
 else
+  cd nixconfig
   git pull
   cd ..
 fi
