@@ -6,8 +6,11 @@
     enable = true;
     layout = "us";
 
+    displayManager = {
+      defaultSession = "none+i3";
+    };
+
     desktopManager = {
-      default = "none+i3";
       xterm.enable = false;
     };
 
