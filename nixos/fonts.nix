@@ -28,45 +28,45 @@ in {
   fonts = with pkgs; [
     (iosevka.override {
       set = "custom";
-      #privateBuildPlan = {
       family = "Iosevka";
+      privateBuildPlan = {
       design = [
         "common styles"
         "sans"
         "ligset-haskell"
       ] ++ cv;
-      #};
+      };
     })
 
     (iosevka.override {
       set = "term";
-      #privateBuildPlan = {
       family = "Iosevka Term";
+      privateBuildPlan = {
       design = [
         "common styles"
         "sans"
         "sp-term"
         "ligset-haskell"
       ] ++ cv;
-      #};
+      };
     })
 
     (iosevka.override {
       set = "fixed";
-      #privateBuildPlan = {
       family = "Iosevka Fixed";
+      privateBuildPlan = {
       design = [
         "common styles"
         "sans"
         "sp-fixed"
       ] ++ cv;
-      #};
+      };
     })
     
     (iosevka.override {
       set = "etoile";
-      #privateBuildPlan = {
       family = "Iosevka Etoile";
+      privateBuildPlan = {
       design = [
         "type"
         "slab"
@@ -84,13 +84,13 @@ in {
       #   menu = 5;
       #   css = "normal";
       # };
-      #};
+      };
     })
 
     (iosevka.override {
       set = "sparkle";
       family = "Iosevka Sparkle";
-      #privateBuildPlan = {
+      privateBuildPlan = {
       design = [
         "type"
         "v-at-fourfold"
@@ -107,7 +107,7 @@ in {
       #   menu = 5;
       #   css = "normal";
       # };
-      #};
+      };
     })
 
     material-design-icons
