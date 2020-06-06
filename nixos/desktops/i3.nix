@@ -7,7 +7,7 @@
     layout = "us";
 
     desktopManager = {
-      default = "none+i3";
+      defaultSession = "none+i3";
       xterm.enable = false;
     };
 
