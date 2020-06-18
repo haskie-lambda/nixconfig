@@ -1,4 +1,4 @@
-if [ "$1" != "--rebuild" ]; then 
+if [ "$1" != "--rebuild" ] || [ "$1" != "--reinstall" ] ; then 
 
   # PARTITIONING
   parted /dev/sda -- mklabel gpt
