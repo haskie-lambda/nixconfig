@@ -28,7 +28,7 @@ in {
   fonts = with pkgs; [
     (iosevka.override {
       set = "custom";
-      family = "Iosevka";
+      #family = "Iosevka";
       privateBuildPlan = {
       design = [
         "common styles"
@@ -40,7 +40,7 @@ in {
 
     (iosevka.override {
       set = "term";
-      family = "Iosevka Term";
+      #family = "Iosevka Term";
       privateBuildPlan = {
       design = [
         "common styles"
@@ -53,7 +53,7 @@ in {
 
     (iosevka.override {
       set = "fixed";
-      family = "Iosevka Fixed";
+      #family = "Iosevka Fixed";
       privateBuildPlan = {
       design = [
         "common styles"
@@ -65,7 +65,7 @@ in {
     
     (iosevka.override {
       set = "etoile";
-      family = "Iosevka Etoile";
+      #family = "Iosevka Etoile";
       privateBuildPlan = {
       design = [
         "type"
@@ -89,7 +89,7 @@ in {
 
     (iosevka.override {
       set = "sparkle";
-      family = "Iosevka Sparkle";
+      #family = "Iosevka Sparkle";
       privateBuildPlan = {
       design = [
         "type"
