@@ -83,7 +83,7 @@
   environment.systemPackages = import ../packages.nix pkgs;
   nixpkgs.config.allowUnfree = true;
 
-  fonts = import ../fonts.nix pkgs;
+  # fonts = import ../fonts.nix pkgs;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
