@@ -15,7 +15,7 @@
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
-        dmenu i3status i3lock
+        rofi i3status i3lock
      ];
      package = pkgs.i3-gaps;
     };

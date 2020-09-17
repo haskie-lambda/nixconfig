@@ -9,7 +9,7 @@ in {
     ../programs/kitty.nix
 
     # Compositor
-    ../programs/picom.nix
+    #../programs/picom.nix
 
     # Bar
     ../programs/polybar.nix
@@ -71,7 +71,7 @@ in {
         };
 
         keybindings = pkgs.lib.mkOptionDefault {
-          "${modifier}+Return" = "exec alacritty";
+          "${modifier}+Return" = "exec kitty";
           "${modifier}+q" = "kill";
           "${modifier}+d" = "exec rofi -modi drun -show drun";
           "XF86AudioMute" = "exec amixer set Master toggle";
@@ -82,24 +82,24 @@ in {
           "XF86AudioNext" = "exec mpc next";
         };
 
-        assigns = {
-          "2" = [
-            {class = "Firefox";}
-          ];
-          "5" = [
-            {class = "libreoffice$";}
-          ];
-          "8" = [
-            {class = "discord";}
-            {class = "TelegramDesktop";}
-          ];
-          "9" = [
-            {class = "PCSX2";}
-          ];
-          "10" = [
-            {class = "Steam";}
-          ];
-        };
+        #assigns = {
+        #  "2" = [
+        #    {class = "Firefox";}
+        #  ];
+        #  "5" = [
+        #    {class = "libreoffice$";}
+        #  ];
+        #  "8" = [
+        #    {class = "discord";}
+        #    {class = "TelegramDesktop";}
+        #  ];
+        #  "9" = [
+        #    {class = "PCSX2";}
+        #  ];
+        #  "10" = [
+        #    {class = "Steam";}
+        #  ];
+        #};
 
         floating.criteria = [
           {"class" = "Steam";}
