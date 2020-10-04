@@ -56,7 +56,7 @@
 #    defaultGateway6 = { address = "2a01:cb19:86ed:f600:46a6:1eff:fe80:c516"; interface = "enp4s0"; };
 #    nameservers = [ "84.200.69.80" "84.200.70.40" "2001:1608:10:25::1c04:b12f" "2001:1608:10:25::9249:d69b" ];
     hostName = "faebl";
-    wireless.enable = true;
+    # wireless.enable = true;
     useDHCP = false;
     interfaces.ens33.useDHCP = true;
     networkmanager.enable = true;

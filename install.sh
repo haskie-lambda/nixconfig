@@ -1,4 +1,4 @@
-if [ "$1" != "--rebuild" ] && [ "$1" != "--reinstall" ] ; then 
+if [[ "$1" != "--rebuild" ]] && [[ "$1" != "--reinstall" ]] ; then 
 
   # PARTITIONING
   parted /dev/sda -- mklabel gpt
@@ -28,8 +28,10 @@ if [ "$1" != "--rebuild" ] && [ "$1" != "--reinstall" ] ; then
   nixos-generate-config --root /mnt
 
 else
+
   cd nixconfig
   git pull
+
 fi
 
 
