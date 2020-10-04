@@ -66,6 +66,7 @@
     };
     shellAliases = {
       _git2ssh = ''git remote set-url origin $(git remote -v | grep "^origin" | tr "\t" "\n" | tr " " "\n" | head -n 2 | tail -n 1 | sed -r "s|https*://([a-z0-9.]+)/(.+)|git@\1:\2|g")'';
+      xclip = ''xclip -selection c'';
     };
   };
 
