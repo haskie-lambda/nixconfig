@@ -6,6 +6,7 @@ pkgs: with pkgs; [
   git
   home-manager
   ghostscript
+  xclip
 
   stack
   firefox
