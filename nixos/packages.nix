@@ -21,4 +21,8 @@ pkgs: with pkgs; [
   dunst
   kitty
   zathura
+
+  cabal2nix
+  nix-prefetch-git
+  cabal-install
 ] 
