@@ -6,5 +6,5 @@ rec {
   font-serif = "${font} Etoile";
   font-size = 12;
   font-icons = "Material Design Icons";
-  color = import ./colorscemes/dracula.nix;
+  color = import ./colorschemes/nord.nix;
 }

@@ -577,25 +577,25 @@ in {
       };
 
       # userContent.css
-      userContent = with style.color; ''
-        /* Hide the scrollbars */
-        *{scrollbar-width:none !important}
+      #userContent = with style.color; ''
+      #  /* Hide the scrollbars */
+      #  *{scrollbar-width:none !important}
 
-        /* Change the about:blank page background */
-        @-moz-document url("about:blank") {
-          * {
-            background: ${background} !important;
-          }
-        }
-      '';
+      #  /* Change the about:blank page background */
+      #  @-moz-document url("about:blank") {
+      #    * {
+      #      background: ${background} !important;
+      #    }
+      #  }
+      #'';
 
       # userChrome.css
-      userChrome = ''
-        /* Hide the tab close button */
-        .tab-close-button {
-          display: none !important;
-        }
-      '';
+      #userChrome = ''
+      #  /* Hide the tab close button */
+      #  .tab-close-button {
+      #    display: none !important;
+      #  }
+      #'';
     };
   };
 }

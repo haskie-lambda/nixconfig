@@ -31,8 +31,8 @@ in {
         };
       };
     };
-    plugins = with pkgs; [
-      rofi-calc
-    ];
+    #plugins = with pkgs; [
+    #  rofi-calc
+    #];
   };
 }

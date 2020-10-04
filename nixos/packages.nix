@@ -6,7 +6,6 @@ pkgs: with pkgs; [
   git
   home-manager
   ghostscript
-  wicd
 
   stack
   firefox

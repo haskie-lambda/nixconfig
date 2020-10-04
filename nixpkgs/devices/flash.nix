@@ -5,7 +5,7 @@
     ../programs/firefox.nix
   ];
 
-  home.packages = import ../packages.nix pkgs;
+  #home.packages = import ../packages.nix pkgs;
 
   home.keyboard.layout = "us";
 
