@@ -7,3 +7,5 @@ sudo cp -rf ~/.nixconfig/nixpkgs/* /home/faebl/.config/nixpkgs
 sudo chmod -R ugo+rw /home/faebl/.config/nixpkgs
 
 sudo nixos-rebuild switch --upgrade
+cd ~
+home-manager build
