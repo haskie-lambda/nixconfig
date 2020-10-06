@@ -4,7 +4,7 @@ pkgs: with pkgs; [
   vim
   htop
   git
-  ghoststript
+  ghostscript
   xclip
   home-manager
 
@@ -26,4 +26,4 @@ pkgs: with pkgs; [
   cabal-install 
 
   steam
-];
+]

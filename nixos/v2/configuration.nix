@@ -8,7 +8,7 @@
     ./display.nix
   ];
   
-  environment.systemPackages = ./packages.nix;
+  environment.systemPackages = import ./packages.nix pkgs;
   nixpkgs.config.allowUnfree = true;  
 }
      

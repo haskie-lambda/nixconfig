@@ -3,7 +3,6 @@
   # UI
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
   
-  services.xserver.displayManager.defaultSession = "none+i3";
   services.xserver = {
     enable = true;
     layout = "us";
@@ -20,6 +19,8 @@
      package = pkgs.i3-gaps;
     
     };
+
+    #displayManager.defaultSession = "none+i3";
   };
 
 }

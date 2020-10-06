@@ -9,7 +9,7 @@
       i3status
       i3lock
     ];
-    package = pkgs.i3-gaps;
+#    package = pkgs.i3-gaps;
   
     config = rec {
       modifier = "Mod4";
