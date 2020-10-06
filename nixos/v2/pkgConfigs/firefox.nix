@@ -576,26 +576,6 @@ in {
         "extensions.pocket.enabled" = false;
       };
 
-      # userContent.css
-      #userContent = with style.color; ''
-      #  /* Hide the scrollbars */
-      #  *{scrollbar-width:none !important}
-
-      #  /* Change the about:blank page background */
-      #  @-moz-document url("about:blank") {
-      #    * {
-      #      background: ${background} !important;
-      #    }
-      #  }
-      #'';
-
-      # userChrome.css
-      #userChrome = ''
-      #  /* Hide the tab close button */
-      #  .tab-close-button {
-      #    display: none !important;
-      #  }
-      #'';
     };
   };
 }

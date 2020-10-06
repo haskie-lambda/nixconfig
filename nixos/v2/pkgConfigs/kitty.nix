@@ -1,0 +1,7 @@
+{ ... }:
+
+{ 
+  rograms.kitty = {
+    enable = true;
+  };
+}

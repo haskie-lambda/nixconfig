@@ -37,9 +37,9 @@ fi
 
 rm /mnt/etc/nixos/configuration.nix
 yes | cp -rf ./nixos/* /mnt/etc/nixos/
-mkdir -p /mnt/home/faebl/.config/nixpkgs
-yes | cp -rf ./nixpkgs/* /mnt/home/faebl/.config/nixpkgs
-sudo chmod -R ugo+rw /mnt/home/faebl/.config/nixpkgs
+#mkdir -p /mnt/home/faebl/.config/nixpkgs
+#yes | cp -rf ./nixpkgs/* /mnt/home/faebl/.config/nixpkgs
+#sudo chmod -R ugo+rw /mnt/home/faebl/.config/nixpkgs
 
 nixos-install
 #reboot

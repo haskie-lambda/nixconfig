@@ -18,6 +18,7 @@
         rofi i3status i3lock
      ];
      package = pkgs.i3-gaps;
+    
     };
   };
 

@@ -2,30 +2,28 @@ pkgs: with pkgs; [
   wget
   curl
   vim
-  htop  
+  htop
   git
-  home-manager
-  ghostscript
+  ghoststript
   xclip
+  home-manager
 
   stack
-  firefox
+  firefox 
   zsh
   oh-my-zsh
   plotinus
   elvish
   rofi
   polybar
-  #picom
-  alacritty
-  dunst
+  alacritty 
+  dunst 
   kitty
   zathura
 
   cabal2nix
   nix-prefetch-git
-  cabal-install
+  cabal-install 
 
   steam
-  netbeans
-] 
+];
