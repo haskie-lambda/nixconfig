@@ -11,13 +11,17 @@
       extraPackages = with pkgs; [
         rofi
         i3status
-        i3lock
+        i3lock-fancy
       ];
     };
 
     displayManager.defaultSession = "none+i3";
     desktopManager.xterm.enable = false;
 
-    synaptics.enable = true;
+    synaptics = {
+      enable = true;
+      twoFingerScroll = true;
+      palmDetect = true;
+    };
   };
 }
