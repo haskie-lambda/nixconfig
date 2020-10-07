@@ -33,6 +33,8 @@ au FileType sh setlocal ts=4 sts=4 sw=4 expandtab
 au FileType nix setlocal ts=2 sts=2 sw=2 expandtab
 au BufWritePost *.tex :! pdflatex %
 
+map <C-n> :NERDTreeToggle<CR>
+
 let g:haskell_indent_guard = 4
 
 " Restore the cursor
