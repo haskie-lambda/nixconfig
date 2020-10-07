@@ -5,7 +5,7 @@
   services.xserver = {
     enable = true;
     layout = "us";
-    
+
     windowManager.i3 = {
       enable = true; 
       extraPackages = with pkgs; [
@@ -17,5 +17,7 @@
 
     displayManager.defaultSession = "none+i3";
     desktopManager.xterm.enable = false;
+
+    synaptics.enable = true;
   };
 }

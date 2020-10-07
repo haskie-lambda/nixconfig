@@ -11,8 +11,8 @@
     scrollbar = false;
     terminal = "kitty";
     location = "center";
-    plugins = with pkgs; [
-      rofi-calc
-    ];
+    #plugins = with pkgs; [
+    #  rofi-calc
+    #];
   };
 }

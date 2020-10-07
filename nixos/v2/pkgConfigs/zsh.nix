@@ -9,10 +9,11 @@
     shellAliases = {
       xclip = ''xclip -selection c'';
     };
-    ohMyZsh = {
-      enable  = true;
-      plugins = [ "git" "man" ];
-      theme = "agnoster";
-    };
+
+#    ohMyZsh = {
+#      enable  = true;
+#      plugins = [ "git" "man" ];
+#      theme = "agnoster";
+#    };
   };
 }

@@ -3,7 +3,7 @@
 {
   services.dunst = {
     enable = true;
-    settnigs = {
+    settings = {
       global = {
         geometry = "300x5-30+50";
       };

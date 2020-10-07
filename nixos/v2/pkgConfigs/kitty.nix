@@ -1,7 +1,7 @@
 { ... }:
 
 { 
-  rograms.kitty = {
-    enable = true;
-  };
+  #programs.kitty = {
+  #  enable = true;
+  #};
 }
