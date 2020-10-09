@@ -8,6 +8,7 @@
     };
     shellAliases = {
       xclip = ''xclip -selection c'';
+      fix-audio = ''alsactl restore'';
     };
 
 #    ohMyZsh = {

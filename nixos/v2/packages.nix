@@ -20,10 +20,15 @@ pkgs: with pkgs; [
   dunst 
   kitty
   zathura
+  nomacs
+  inkscape
+  
 
   cabal2nix
   nix-prefetch-git
   cabal-install 
 
   steam
+  discord
+  pulsemixer
 ]
