@@ -47,6 +47,15 @@ afterwards the system installation is complete and you can enjoy your new OS(con
 
 for features browse the configuration.
 
+# Working with the configuration afterwards
+my way of using it is like this:
+i cloned this repository to `~/.nixconfig`.
+Now every time I want to make a change to the config as a whole, i make the change in this directory and use the `re-init.sh` script to apply my changes (along with either one of the `--os` (deploy everything but only activate the nix-config changes) `--home` (deploy everything but only activate the home-manager changes)).
+then i also sync that change back to my repository for keeping it up to date.
+
+This way, whenever I want a new development environment on a different machine or in a vm, my config there is always synched up with my main configuration. (To use it that way, fork the project, deploy your own public reachable `nix-install.sh` script that downloads your custom repo and you have the exact same setup that I use for daily work ;)
+
+
 # Todo
 - add post-installation `home-manager switch` to install script
 - add git repo cloning to install script to give the user access to `re-init.sh` for resetting
