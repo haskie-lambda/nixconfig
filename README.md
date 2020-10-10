@@ -1,6 +1,6 @@
 # Installation
 
-Installation of the config is automated. Simply boot the system into a nixos live environment, connect it to the internet (instructions coming soon, or google it) and type the following command:
+Installation of the config is automated. Simply boot the system into a nixos live environment, connect it to the internet ([good instructions here](https://www.linuxbabe.com/command-line/ubuntu-server-16-04-wifi-wpa-supplicant)) and type the following command:
 
 ```
 $ curl digital-independence.xyz/nix-install.sh > install.sh && sudo sh install.sh
