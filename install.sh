@@ -39,7 +39,9 @@ rm /mnt/etc/nixos/configuration.nix
 yes | cp -rf ./nixos/* /mnt/etc/nixos/
 mkdir -p /mnt/home/faebl/.config/kitty
 "include /etc/nixos/v2/theme.conf" >> /mnt/home/faebl/.config/kitty/kitty.conf
-#yes | cp -rf ./nixpkgs/* /mnt/home/faebl/.config/nixpkgs
+mkdir -p /mnt/home/faebl/.config/i3status
+cp -rf ./nixos/v2/i3status.config/* /mnt/home/faebl/.config/i3status/config
+
 sudo chmod -R ugo+rw /mnt/home/faebl/.config
 
 nixos-install
