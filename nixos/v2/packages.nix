@@ -7,6 +7,7 @@ pkgs: with pkgs; [
   ghostscript
   xclip
   home-manager
+  protonvpn-cli-ng
 
   stack
   firefox 
