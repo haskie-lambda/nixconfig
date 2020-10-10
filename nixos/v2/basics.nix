@@ -54,4 +54,11 @@
   };
 
   system.stateVersion = "20.03";
+
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      "*/1 * * * *  faebl protonvpn s | grep Server | sed -e 's/Server: *//' > /home/faebl/.config/i3status/vpnc"
+    ];
+  };
 }
