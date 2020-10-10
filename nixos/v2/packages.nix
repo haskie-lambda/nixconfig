@@ -31,4 +31,7 @@ pkgs: with pkgs; [
   steam
   discord
   pulsemixer
+  arandr
+  chromium
+  unzip
 ]
