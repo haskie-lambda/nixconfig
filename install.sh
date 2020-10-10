@@ -1,6 +1,8 @@
+$username="faebl"
 if [[ "$1" != "--rebuild" ]] && [[ "$1" != "--reinstall" ]] ; then 
 
   # PARTITIONING
+  # EDIT THIS
   parted /dev/sda -- mklabel gpt
   parted /dev/sda -- mkpart primary 512MiB 46GiB
   parted /dev/sda -- mkpart primary linux-swap 46GiB 100%
@@ -34,15 +36,23 @@ else
 
 fi
 
-
+# user space stuff like home manager, kitty, i3status configurations
 rm /mnt/etc/nixos/configuration.nix
 yes | cp -rf ./nixos/* /mnt/etc/nixos/
-mkdir -p /mnt/home/faebl/.config/kitty
-"include /etc/nixos/v2/theme.conf" >> /mnt/home/faebl/.config/kitty/kitty.conf
-mkdir -p /mnt/home/faebl/.config/i3status
-cp -rf ./nixos/v2/i3status.config/* /mnt/home/faebl/.config/i3status/config
 
-sudo chmod -R ugo+rw /mnt/home/faebl/.config
+mkdir -p /mnt/home/$username/.config/kitty
+"include /etc/nixos/v2/theme.conf" >> /mnt/home/$username/.config/kitty/kitty.conf
+
+mkdir -p /mnt/home/$username/.config/i3status
+cp -rf ./nixos/v2/i3status.config/* /mnt/home/$username/.config/i3status/config
+
+mkdir -p /mnt/home/$username/.config/nixpkgs
+cp home.nix /mnt/home/$username/.config/nixpkgs
+
+
+sudo chmod -R ugo+rw /mnt/home/$username/.config
+
+sudo sed -i -e 's/USERNAME/$username/g' /mnt/etc/nixos/v2/basics.nix
 
 nixos-install
 #reboot
