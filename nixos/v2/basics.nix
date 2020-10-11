@@ -15,7 +15,7 @@
   security.rngd.enable = false;
 
   networking = {
-    hostName = "USERNAME";
+    hostName = "faebl";
     useDHCP = false;
     interfaces.enc33.useDHCP = true;
     networkmanager.enable = true;
@@ -41,9 +41,9 @@
     driSupport32Bit = true;
   };
 
-  users.users.USERNAME = {
+  users.users.faebl = {
     isNormalUser = true;
-    home = "/home/USERNAME";
+    home = "/home/faebl";
     shell = pkgs.zsh;
     extraGroups = [ "wheel" "networking" ];
   };
@@ -58,7 +58,8 @@
   services.cron = {
     enable = true;
     systemCronJobs = [
-      "*/1 * * * *  USERNAME protonvpn s | grep Server | sed -e 's/Server: *//' > /home/USERNAME/.config/i3status/vpnc"
+      "*/1 * * * *  faebl protonvpn s | grep Server | sed -e 's/Server: *//' > /home/faebl/.config/i3status/vpnc"
+      "*/1 * * * *  faebl pscircle --output-width=1920 --output-height=1080 --tree-radius-increment=140 --tree-center=-100:0 --tree-font-size=12 --dot-radius=4 --cpulist-center=550:-200 --memlist-center=560:200"
     ];
   };
 }
