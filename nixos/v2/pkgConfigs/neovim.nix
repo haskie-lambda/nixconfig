@@ -9,6 +9,7 @@
       vim-nix
       nerdtree
       vim-airline
+      
     ];
 
     extraConfig = ''
@@ -35,10 +36,15 @@ au BufWritePost *.tex :! pdflatex %
 
 map <C-n> :NERDTreeToggle<CR>
 
-let g:haskell_indent_guard = 4
+let g:haskell_indent_guard = 2
+set shiftwidth=4
+set number
+set expandtab
 
 " Restore the cursor
 au VimLeave * set guicursor=a:ver100
+
+
     '';
   };
   

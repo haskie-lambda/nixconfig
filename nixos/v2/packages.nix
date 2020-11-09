@@ -8,6 +8,7 @@ pkgs: with pkgs; [
   xclip
   home-manager
   protonvpn-cli-ng
+  tree
 
   stack
   firefox 
@@ -23,6 +24,7 @@ pkgs: with pkgs; [
   zathura
   nomacs
   inkscape
+  pscircle
   
 
   cabal2nix
@@ -35,4 +37,7 @@ pkgs: with pkgs; [
   arandr
   chromium
   unzip
+
+  qjackctl
+  ardour
 ]
