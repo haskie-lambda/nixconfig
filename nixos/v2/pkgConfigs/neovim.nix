@@ -9,7 +9,7 @@
       vim-nix
       nerdtree
       vim-airline
-      
+      ctrlp-vim      
     ];
 
     extraConfig = ''

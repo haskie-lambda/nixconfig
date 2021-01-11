@@ -1,4 +1,5 @@
 pkgs: with pkgs; [
+  #system
   wget
   curl
   vim
@@ -9,9 +10,11 @@ pkgs: with pkgs; [
   home-manager
   protonvpn-cli-ng
   tree
+  unrar
+  unzip
+  wally-cli
 
-  stack
-  firefox 
+  #rice
   zsh
   oh-my-zsh
   plotinus
@@ -27,17 +30,34 @@ pkgs: with pkgs; [
   pscircle
   
 
-  cabal2nix
-  nix-prefetch-git
-  cabal-install 
-
+  #media
+  firefox 
   steam
   discord
+  libdrm # for discord
+  wine
+  winetricks
+  winePackages.fonts
   pulsemixer
   arandr
   chromium
   unzip
+  lutris
+  flameshot
+  vlc
 
+  #audio
   qjackctl
   ardour
+
+  #haskell
+  zlib
+  stack
+  cabal2nix
+  nix-prefetch-git
+  cabal-install 
+  vscode
+  
+  teamviewer
+  android-studio
 ]

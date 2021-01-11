@@ -20,8 +20,9 @@ in
         "${mod}+Return" = "exec kitty";
         "${mod}+q" = "kill";
         "${mod}+d" = "exec rofi -modi drun -show drun";
-	"${mod}+x" = "exec screenshot";
-	"${mod}+l" = "exec i3lock-fancy -t Authenticate";
+      	"${mod}+x" = "exec screenshot";
+        "${mod}+c" = "exec flameshot gui";
+	      "${mod}+l" = "exec i3lock-fancy -t Authenticate";
 
         "XF86AudioMute" = "exec amixer set Master toggle";
         "XF86AudioLowerVolume" = "exec amixer set Master 4%-";

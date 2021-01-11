@@ -5,7 +5,7 @@
   services.xserver = {
     enable = true;
     layout = "us";
-
+    startDbusSession = true;
     windowManager.i3 = {
       enable = true; 
       extraPackages = with pkgs; [
@@ -23,5 +23,9 @@
       twoFingerScroll = true;
       palmDetect = true;
     };
+
+    #extraDisplaySettings = ''Visual GrayScale'';
+    #extraDisplaySettings =
+    #  ''Depth 1'';
   };
 }

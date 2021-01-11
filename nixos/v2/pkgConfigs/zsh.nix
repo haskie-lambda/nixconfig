@@ -7,7 +7,6 @@
       theme = "agnoster";
     };
     shellAliases = {
-      xclip = ''xclip -selection c'';
       fix-audio = ''pactl load-module module-jack-sink channels=2; pactl load-module module-jack-source channels=1'';
       fix-wallpaper = ''pscircle; systemctl --user restart psc-updater'';
       toJson = ''
@@ -24,9 +23,11 @@
                    }
                   END {print "]"}'
       '';
+      rp = "runPackage";
     };
     
     initExtra =  ''
+      runPackage(){ nix-shell -p $1 --command "$1 &" }
       :q(){ exit; }
       :r(){  eval $(history | tail -n1 | awk '{ s=""; for(i=2; i<=NF; i++) s=s $i " "; printf s}') }
       addHeaders() { awk -v h=$1 "BEGIN {print h} 1" $2; }

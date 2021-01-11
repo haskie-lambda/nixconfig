@@ -19,6 +19,14 @@
     useDHCP = false;
     interfaces.enc33.useDHCP = true;
     networkmanager.enable = true;
+    extraHosts = "104.16.16.35 registry.npmjs.org";
+
+    firewall.allowedTCPPortRanges =[
+      { from = 8000; to = 9000; }
+    ];
+    firewall.allowedUDPPortRanges =[
+      { from = 8000; to = 9000; }
+    ];
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -35,6 +43,7 @@
   powerManagement.resumeCommands = "
     echo 1 > '/sys/bus/pci/devices/0000:09:00.3/remove' \n
     echo 1 > '/sys/bus/pci/rescan'\n
+    sudo protonvpn r
     ";
 
   hardware.opengl = {
@@ -73,6 +82,8 @@
     ];
   };
 
+  services.teamviewer.enable = true;
+
   systemd.user = {
     #timers.psc-timer = {
     #  wantedBy = [ "timers.target" ];
@@ -91,4 +102,13 @@ ExecStart = "${pkgs.bash}/bin/bash -c \"while true; do ${pkgs.pscircle}/bin/psci
       enable = true;
     };
   };
+
+  #discord latest version
+  nixpkgs.overlays = [(self: super: 
+      { discord = super.discord.overrideAttrs (_: 
+          { src = builtins.fetchTarball https://dl.discordapp.net/apps/linux/0.0.13/discord-0.0.13.tar.gz;
+        }
+        );
+      })
+    ];
 }
