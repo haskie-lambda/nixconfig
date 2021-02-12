@@ -24,6 +24,12 @@
                   END {print "]"}'
       '';
       rp = "runPackage";
+      pstop = ''
+          ps aux --sort -rss | 
+            head | 
+            sed "s#/nix/store/.*/##" | 
+            awk '{ for (i=1; i<=12; i++) { if(i==12) { split($i,s,/ /); printf "%s ", s[0]; } else {printf "%8s ", $i;} } printf "\n"; }'
+        '';
     };
     
     initExtra =  ''
@@ -46,6 +52,12 @@
           exit 1;
         fi
         echo "Checksum correct; file saved to $2";
+      }
+      dig() {
+        for type in A AAAA CNAME MX NS PTR SOA SRV TXT
+        do
+          echo ""; echo "$type"; tdns query -t $type $1;
+        done
       }
       '';
   };

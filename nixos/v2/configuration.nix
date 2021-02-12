@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
 
   imports = [
@@ -9,6 +8,7 @@
   ];
   
   environment.systemPackages = import ./packages.nix pkgs;
+
   nixpkgs.config.allowUnfree = true;  
 }
      

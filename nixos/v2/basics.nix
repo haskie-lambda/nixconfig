@@ -17,15 +17,18 @@
   networking = {
     hostName = "USERNAME";
     useDHCP = false;
-    interfaces.enc33.useDHCP = true;
+    enableIPv6 = true;
+    #interfaces.enc33.useDHCP = true;
     networkmanager.enable = true;
     extraHosts = "104.16.16.35 registry.npmjs.org";
 
     firewall.allowedTCPPortRanges =[
-      { from = 8000; to = 9000; }
+        { from = 8000; to = 9000; }
+        { from = 18000; to = 20000; }
     ];
     firewall.allowedUDPPortRanges =[
-      { from = 8000; to = 9000; }
+        { from = 8000; to = 9000; }
+        { from = 18000; to = 20000; }
     ];
   };
 
@@ -37,6 +40,7 @@
   services.blueman.enable = true;
 
   imports = [
+    <nix-ld/modules/nix-ld.nix>
     ./audio.nix
   ];
 
@@ -73,12 +77,13 @@
     ];  
   };
 
-  system.stateVersion = "20.03";
+  system.stateVersion = "20.09";
 
   services.cron = {
     enable = true;
     systemCronJobs = [
       "*/1 * * * *  USERNAME protonvpn s | grep Server | sed -e 's/Server: *//' > /home/USERNAME/.config/i3status/vpnc"
+      "*/1 * * * *  USERNAME zsh /home/USERNAME/.config/i3status/timer_script"
     ];
   };
 
@@ -103,12 +108,16 @@ ExecStart = "${pkgs.bash}/bin/bash -c \"while true; do ${pkgs.pscircle}/bin/psci
     };
   };
 
-  #discord latest version
-  nixpkgs.overlays = [(self: super: 
-      { discord = super.discord.overrideAttrs (_: 
-          { src = builtins.fetchTarball https://dl.discordapp.net/apps/linux/0.0.13/discord-0.0.13.tar.gz;
-        }
-        );
-      })
-    ];
+  services.udev.extraRules = ''
+# Teensy rules for the Ergodox EZ
+ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", ENV{ID_MM_DEVICE_IGNORE}="1"
+ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789A]?", ENV{MTP_NO_PROBE}="1"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789ABCD]?", MODE:="0666"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", MODE:="0666"
+
+# STM32 rules for the Moonlander and Planck EZ
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", \
+    MODE:="0666", \
+    SYMLINK+="stm32_dfu"
+  '';
 }
