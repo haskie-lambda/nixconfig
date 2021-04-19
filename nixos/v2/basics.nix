@@ -14,6 +14,9 @@
   hardware.cpu.amd.updateMicrocode = true;
   security.rngd.enable = false;
 
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "USERNAME" ];
+
   networking = {
     hostName = "USERNAME";
     useDHCP = false;
@@ -22,15 +25,9 @@
     networkmanager.enable = true;
     extraHosts = "104.16.16.35 registry.npmjs.org";
 
-    firewall.allowedTCPPortRanges =[
-        { from = 8000; to = 9000; }
-        { from = 18000; to = 20000; }
-    ];
-    firewall.allowedUDPPortRanges =[
-        { from = 8000; to = 9000; }
-        { from = 18000; to = 20000; }
-    ];
   };
+
+  
 
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -42,6 +39,7 @@
   imports = [
     <nix-ld/modules/nix-ld.nix>
     ./audio.nix
+    ./ssh.nix
   ];
 
   powerManagement.resumeCommands = "

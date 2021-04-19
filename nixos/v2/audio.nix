@@ -64,6 +64,10 @@
     enable = true;
     extraClientConf = "autospawn=yes\n";
     package = pkgs.pulseaudioFull.override { jackaudioSupport = true; };
+    #extraConfig = ''
+    #    load-sample-lazy x11-bell /usr/share/sounds/freedesktop/stereo/bell.oga
+    #    load-module module-x11-bell sample=x11-bell
+    #    '';
 
   };
 

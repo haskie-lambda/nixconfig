@@ -1,4 +1,5 @@
-pkgs: with pkgs; [
+pkgs:
+with pkgs; [
   #system
   wget
   curl
@@ -14,6 +15,8 @@ pkgs: with pkgs; [
   unzip
   wally-cli
   tdns-cli
+  udisks
+  lsof
 
   # nix-autobahn
   fzf
@@ -28,6 +31,7 @@ pkgs: with pkgs; [
   elvish
   rofi
   recoll
+  python3
   polybar
   alacritty 
   dunst 
@@ -52,6 +56,9 @@ pkgs: with pkgs; [
   flameshot
   vlc
   steam
+  pandoc
+  texlive.combined.scheme-full
+  skype
 
   #audio
   qjackctl
@@ -76,6 +83,10 @@ pkgs: with pkgs; [
        };
      };
   })
+  stylish-haskell
+
+  # purescript for vim ide
+  purescript  
 
   #collab
   teamviewer
@@ -84,4 +95,9 @@ pkgs: with pkgs; [
   signal-desktop
 
   android-studio
+
+  # uni
+  virtualbox
+
+  sshfs
 ]
