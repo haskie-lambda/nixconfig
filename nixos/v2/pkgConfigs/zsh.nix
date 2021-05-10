@@ -7,6 +7,7 @@
       theme = "agnoster";
     };
     shellAliases = {
+      ansi2html = "sh /etc/nixos/v2/pkgConfigs/ansi2html.sh";
       udm = "udisksctl mount -b";
       vmi = "vim";
       v = "vim";
