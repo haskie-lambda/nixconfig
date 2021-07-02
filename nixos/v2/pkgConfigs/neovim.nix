@@ -15,6 +15,8 @@
       psc-ide-vim
       vim-surround
       vim-peekaboo
+      coc-prettier
+      commentary
     ];
 
     extraConfig = ''
@@ -24,12 +26,17 @@ filetype plugin on
 filetype indent on
 set mouse=a
 
+" markdown syntax highlight
+let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'vim','haskell','sh']
+
 " Turn on hybrid numbers
 "set nu rnu
 set nonu
 "hi LineNr ctermfg=grey
-hi Search cterm=NONE ctermbg=232 ctermfg=50
-hi IncSearch cterm=NONE ctermbg=50 ctermfg=232
+"hi Search cterm=NONE ctermbg=232 ctermfg=50
+hi Search cterm=NONE ctermfg=lightgrey ctermbg=lightblue
+hi IncSearch cterm=NONE ctermfg=lightgrey ctermbg=lightblue
+"hi IncSearch cterm=NONE ctermbg=50 ctermfg=232
 
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
@@ -112,6 +119,8 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gVzv:call setreg('"', old_reg, old_regtype)<CR>
 
+" ------------------- search selected text ------------------ https://vim.fandom.com/wiki/Search_for_visually_selected_text
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " ------------------- coc-nvim -------------------------
 " TextEdit might fail if hidden is not set.

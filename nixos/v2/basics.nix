@@ -35,6 +35,7 @@
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+  programs.adb.enable = true;
 
   imports = [
     <nix-ld/modules/nix-ld.nix>
@@ -45,7 +46,7 @@
   powerManagement.resumeCommands = "
     echo 1 > '/sys/bus/pci/devices/0000:09:00.3/remove' \n
     echo 1 > '/sys/bus/pci/rescan'\n
-    sudo protonvpn r
+    #sudo protonvpn r
     ";
 
   hardware.opengl = {
@@ -70,6 +71,8 @@
             options = [ "NOPASSWD" ]; }
           #{ command = "nmcli";
           #  options = [ "NOPASSWD" "SETENV" ]; }
+          { command = "/run/current-system/sw/bin/nix-build --option build-use-sandbox true"; 
+            options = [ "NOPASSWD" ]; }
         ];
       }
     ];  

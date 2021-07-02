@@ -9,7 +9,7 @@ with pkgs; [
   ghostscript
   xclip
   home-manager
-  protonvpn-cli
+  protonvpn-cli #openvpn<defunct> bug
   tree
   unrar
   unzip
@@ -17,6 +17,7 @@ with pkgs; [
   tdns-cli
   udisks
   lsof
+  cowsay
 
   # nix-autobahn
   fzf

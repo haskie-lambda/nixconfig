@@ -1,11 +1,24 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
+    enableCompletion = true;
     oh-my-zsh = {
       enable = true;
       theme = "agnoster";
     };
+    plugins = [
+      {
+        name = "zsh-nix-shell";
+        file = "nix-shell.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "chisui";
+          repo = "zsh-nix-shell";
+          rev = "v0.2.0";
+          sha256 = "1gfyrgn23zpwv1vj37gf28hf5z0ka0w5qm6286a7qixwv7ijnrx9";
+        };
+      }
+    ];
     shellAliases = {
       ansi2html = "sh /etc/nixos/v2/pkgConfigs/ansi2html.sh";
       udm = "udisksctl mount -b";
@@ -38,6 +51,18 @@
     };
     
     initExtra =  ''
+      cowcite(){
+            args=(-b -d -g -L -n -N -p -s -t -w -y);
+            animals=(bong bud-frogs bunny cower daemon default dragon dragon-and-cow default elephant default ghostbusters head-in default kiss kosh default milk moofasa moose mutilated default sheep skeleton stegosaurus default three-eyes turkey turtle tux default www);
+            arg='' + "$" + ''{args[ $(( RANDOM % 13 )) ]};
+            animal='' + "$" + ''{animals[ $(( RANDOM % 32 )) ]};
+            curl -s http://bash.org/\?random |
+                grep -E '<p class="qt">.*</p>' |
+               head -n 1 |
+                sed -E 's%.*<p class="qt">(.*)</p>.*%\1%' |
+                sed -e 's/&amp;/&/g; s/\&lt;/</g; s/\&gt;/>/g; s/\&quot;/"/g; s/\&#39;/'"'"'/g' |
+                cowsay -f "$animal" "$arg" -- ;
+      }
       runPackage(){ nix-shell -p $1 --command "$1 &" }
       :q(){ exit; }
       :r(){  eval $(history | tail -n1 | awk '{ s=""; for(i=2; i<=NF; i++) s=s $i " "; printf s}') }
@@ -77,7 +102,7 @@
       mountRunning=false;
       mountIfNotMounted() {
         if [ "$mountRunning" != "true" ]; then
-            if [ ! -f $2/.bash_profile ] || [ ! -f $2/.bashrc ] || [ ! -f $2/GRUPPENNUMMER ]; then
+            if ! ([ -f $2/.bash_profile ] || [ -f $2/.bashrc ] || [ -f $2/GRUPPENNUMMER ]); then
                 mountRunning=true;
                 $1;
                 echo "mounted"
