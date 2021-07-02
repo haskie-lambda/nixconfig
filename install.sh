@@ -1,27 +1,26 @@
-$username="faebl"
+set -e
+username="faebl"
 if [[ "$1" != "--rebuild" ]] && [[ "$1" != "--reinstall" ]] ; then 
 
   # PARTITIONING
   # EDIT THIS
-  parted /dev/sda -- mklabel gpt
-  parted /dev/sda -- mkpart primary 512MiB 46GiB
-  parted /dev/sda -- mkpart primary linux-swap 46GiB 100%
-  parted /dev/sda -- mkpart ESP fat32 1MiB 512MiB
-  parted /dev/sda -- set 3 boot on
+  dev=/dev/nvme0n1
+  parted $dev -- mklabel gpt
+  parted $dev -- mkpart primary 512MiB 230GiB
+  parted $dev -- mkpart primary linux-swap 230GiB 100%
+  parted $dev -- mkpart ESP fat32 1MiB 512MiB
+  parted $dev -- set 3 boot on
 
-  mkfs.ext4 -L crypted /dev/sda1
-  mkswap -L swap /dev/sda2
-  swapon /dev/sda2
-  mkfs.fat -F 32 -n boot /dev/sda3        # (for UEFI systems only)
+  mkfs.ext4 -L crypted "${dev}p1"
+  mkswap -L swap "${dev}p2"
+  swapon "${dev}p2"
+  mkfs.fat -F 32 -n boot "${dev}p3"        # (for UEFI systems only)
 
   # CREATION OF ENCRYPTED HOME
-  until (cryptsetup luksFormat /dev/sda1)
-  do
-    echo "Try again"
-  done
+  cryptsetup luksFormat --cipher aes-xts-plain64 --key-size 512 --hash sha512 --iter-time 4000 --use-random --verify-passphrase "${dev}p1"
 
 
-  cryptsetup luksOpen /dev/sda1 crypted
+  cryptsetup luksOpen "${dev}p1" crypted
   mkfs.ext4 /dev/mapper/crypted
   mount /dev/mapper/crypted /mnt
   mkdir -p /mnt/boot                      # (for UEFI systems only)
