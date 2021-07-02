@@ -6,24 +6,24 @@ with pkgs; [
   vim
   htop
   git
-  ghostscript
+  #ghostscript
   xclip
-  home-manager
-  protonvpn-cli #openvpn<defunct> bug
+  #home-manager
+  #protonvpn-cli #openvpn<defunct> bug
   tree
   unrar
   unzip
   wally-cli
-  tdns-cli
+  #tdns-cli
   udisks
   lsof
   cowsay
 
   # nix-autobahn
-  fzf
-  nix-index
+  #fzf
+  #nix-index
   # wonderdraft
-  xorg.libX11
+  #xorg.libX11
 
   #rice
   zsh
@@ -31,39 +31,38 @@ with pkgs; [
   plotinus
   elvish
   rofi
-  recoll
+  #recoll
   python3
   polybar
-  alacritty 
+  #alacritty 
   dunst 
   kitty
   zathura
   nomacs
-  inkscape
+  #inkscape
   pscircle
   xorg.xbacklight
   
 
   #media
   firefox 
-  wine
-  winetricks
-  winePackages.fonts
+  #wine
+  #winetricks
+  #winePackages.fonts
   pulsemixer
   arandr
   chromium
-  unzip
-  lutris
+  #lutris
   flameshot
   vlc
-  steam
+  #steam
   pandoc
-  texlive.combined.scheme-full
-  skype
+  #texlive.combined.scheme-full
+  #skype
 
   #audio
-  qjackctl
-  ardour
+  #qjackctl
+  #ardour
 
   #haskell
   ghc
@@ -90,15 +89,15 @@ with pkgs; [
   purescript  
 
   #collab
-  teamviewer
-  discord-canary
-  signal-cli
-  signal-desktop
+  #teamviewer
+  #discord-canary
+  #signal-cli
+  #signal-desktop
 
-  android-studio
+  #android-studio
 
   # uni
-  virtualbox
+  #virtualbox
 
-  sshfs
+  #sshfs
 ]

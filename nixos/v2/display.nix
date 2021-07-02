@@ -5,7 +5,7 @@
   services.xserver = {
     enable = true;
     layout = "us";
-    startDbusSession = true;
+#    startDbusSession = true;
     windowManager.i3 = {
       enable = true; 
       extraPackages = with pkgs; [

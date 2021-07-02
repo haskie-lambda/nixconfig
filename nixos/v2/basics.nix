@@ -12,10 +12,10 @@
 
   powerManagement.cpuFreqGovernor = "performance";
   hardware.cpu.amd.updateMicrocode = true;
-  security.rngd.enable = false;
+  #security.rngd.enable = false;
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "USERNAME" ];
+  #virtualisation.virtualbox.host.enable = true;
+  #users.extraGroups.vboxusers.members = [ "USERNAME" ];
 
   networking = {
     hostName = "USERNAME";
@@ -38,7 +38,7 @@
   programs.adb.enable = true;
 
   imports = [
-    <nix-ld/modules/nix-ld.nix>
+  #  <nix-ld/modules/nix-ld.nix>
     ./audio.nix
     ./ssh.nix
   ];
@@ -83,12 +83,12 @@
   services.cron = {
     enable = true;
     systemCronJobs = [
-      "*/1 * * * *  USERNAME protonvpn s | grep Server | sed -e 's/Server: *//' > /home/USERNAME/.config/i3status/vpnc"
+    #  "*/1 * * * *  USERNAME protonvpn s | grep Server | sed -e 's/Server: *//' > /home/USERNAME/.config/i3status/vpnc"
       "*/1 * * * *  USERNAME zsh /home/USERNAME/.config/i3status/timer_script"
     ];
   };
 
-  services.teamviewer.enable = true;
+  #services.teamviewer.enable = true;
 
   systemd.user = {
     #timers.psc-timer = {
