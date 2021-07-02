@@ -4,7 +4,7 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+    loader.efi.canTouchEfiVariables = false;
 
     loader.grub.device = "/dev/sda";
     initrd.checkJournalingFS = false;

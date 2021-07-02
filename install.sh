@@ -53,5 +53,6 @@ sudo chmod -R ugo+rw /mnt/home/$username/.config
 
 sudo sed -i -e "s/USERNAME/$username/g" /mnt/etc/nixos/v2/basics.nix
 
+nix-build '<nixpkgs/nixos>' -A config.system.build.toplevel -I nixos-config=/mnt/etc/nixos/configuration.nix
 nixos-install
 #reboot
